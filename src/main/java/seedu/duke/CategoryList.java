@@ -8,6 +8,26 @@ import java.util.ArrayList;
 public class CategoryList {
     private static ArrayList<Category> decks = new ArrayList<>();
 
+    public static void editCard(String[] args) {
+        if (args[2].equalsIgnoreCase("front")) {
+            decks.get(Integer.parseInt(args[0]) - 1).getManager().getCard(Integer.parseInt(args[1]) - 1).setFront(args[3]);
+        } else {
+            decks.get(Integer.parseInt(args[0]) - 1).getManager().getCard(Integer.parseInt(args[1]) - 1).setBack(args[3]);
+        }
+    }
+
+    public static void editCat(String[] args) {
+        decks.get(Integer.parseInt(args[0]) - 1).setCatName(args[1]);
+    }
+
+    public static int getDecksSize() {
+        return decks.size();
+    }
+
+    //to implement error handling
+    public static Category getDeck(int index) {
+        return decks.get(index);
+    }
     public static void prepareToAddCategory(String categoryName) {
         if (!categoryExists(categoryName)) {
             addCategory(categoryName);

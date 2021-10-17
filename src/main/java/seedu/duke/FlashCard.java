@@ -45,4 +45,20 @@ public class FlashCard {
         logger.log(Level.INFO, "Getting card back: " + back);
         return this.back;
     }
+
+    public void setBack(String input) {
+        logger.setLevel(Level.WARNING);
+        assert this.back != null;
+        logger.log(Level.INFO, "Getting card back: " + back);
+        this.back = input;
+    }
+
+    public void setFront(String input) {
+        logger.setLevel(Level.WARNING);
+        assert this.front != null;
+        logger.log(Level.INFO, "Getting card front: " + front);
+        this.front = input;
+    }
+
+
 }

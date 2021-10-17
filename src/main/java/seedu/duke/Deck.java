@@ -13,8 +13,26 @@ import java.util.logging.Logger;
  */
 public class Deck {
 
-    public ArrayList<FlashCard> cards = new ArrayList<FlashCard>();
+    public static ArrayList<FlashCard> cards = new ArrayList<FlashCard>();
     private static final Logger logger = Logger.getLogger(Deck.class.getName());
+
+    public void editCard(String[] args) {
+        String[] editArgs = args;
+
+//        if(editArg[0].equalsIgnoreCase("front")) {
+//            cards.getCard(cardIndex).setFront(input);
+//        } else (sideArg[0].equalsIgnoreCase("back"))) {
+//            CategoryList.getDeck(catIndex).getManager().getCard(cardIndex).setBack(input);
+//        }
+    }
+
+    public static FlashCard getCard(int index) {
+        return cards.get(index);
+    }
+
+    public static int getCardsSize() {
+        return cards.size();
+    }
 
     public void printNoSlashFoundError() {
         System.out.println("\tRemember that a command must contain \"/bac\"!");
@@ -245,4 +263,6 @@ public class Deck {
     public String getBackOfCard(int cardIndex) {
         return cards.get(cardIndex).getBack();
     }
+
+
 }
